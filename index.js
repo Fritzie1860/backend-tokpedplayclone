@@ -4,7 +4,7 @@
 // const bodyParser = require('body-parser');
 const connectDB = require('./src/utils/db');
 // const authRoutes = require('./src/routes/authRoutes');
-// const videoRoutes = require('./src/routes/videoRoutes');
+const videoRoutes = require('./src/routes/videoRoutes');
 // const productRoutes = require('./src/routes/productRoutes');
 // const commentRoutes = require('./src/routes/commentRoutes');
 
@@ -21,8 +21,7 @@ const connectDB = require('./src/utils/db');
 connectDB();
 
 // // Routes
-// app.use('/api/auth', authRoutes);
-// app.use('/api/video', videoRoutes);
+app.use('/api/video', videoRoutes);
 // app.use('/api/product', productRoutes);
 // app.use('/api/comment', commentRoutes);
 
