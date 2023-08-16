@@ -9,7 +9,7 @@ const videoController = require('./controllers/videoController');
 // const productRoutes = require('./src/routes/productRoutes');
 // const commentRoutes = require('./src/routes/commentRoutes');
 
-// const app = express();
+const app = express();
 
 // require('dotenv').config();
 
@@ -38,7 +38,7 @@ router.get('/videos', videoController.getVideos);
 
 
 const express = require('express')
-const app = express()
+// const app = express()
 app.all('/', (req, res) => {
     console.log("Just got a request!")
     res.send('Yo!')
