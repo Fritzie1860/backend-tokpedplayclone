@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/final_db";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://final_db:final_db@tokpedplay-fritzie.b3j9qs8.mongodb.net/";
 console.log("LIAT SINI" + MONGODB_URI);
 
 

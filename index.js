@@ -26,8 +26,10 @@ app.use('/api/video', videoRoutes);
 app.use('/api/product', productRoutes);
 app.use('/api/comment', commentRoutes);
 
+app.all('/', (req, res) => {
+  console.log("Just got a request!")
+  res.send('Yo!')
+})
+
 // Start the server
-const port = process.env.PORT || 3001;
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+app.listen(process.env.PORT || 3000)
