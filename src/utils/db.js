@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://final_db:final_db@tokpedplay-fritzie.b3j9qs8.mongodb.net/";
-console.log("LIAT SINI" + MONGODB_URI);
-
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://fritzie:final_db@tokpedplay-db.tziprpl.mongodb.net/";
+console.log("LIAT SINI " + MONGODB_URI);
+// final_db
 
 async function connectDB() {
   try {

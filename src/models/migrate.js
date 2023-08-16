@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 const video = require("./Video");
 const product = require("./Product");
 const comment = require("./Comment");
-const user = require("./User");
 
 const videosData = [
   {
@@ -116,7 +115,7 @@ async function insertProduct() {
 }
 
 async function populateDatabase() {
-  await mongoose.connect("mongodb+srv://final_db:final_db!@tokpedplay-fritzie.b3j9qs8.mongodb.net/", {
+  await mongoose.connect("mongodb+srv://fritzie:final_db@tokpedplay-db.tziprpl.mongodb.net/", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });

@@ -1,11 +1,11 @@
 // // index.js
-// const express = require('express');
+const express = require('express');
 // const cors = require('cors');
 // const bodyParser = require('body-parser');
 const connectDB = require('./src/utils/db');
 // const authRoutes = require('./src/routes/authRoutes');
 // const videoRoutes = require('./src/routes/videoRoutes');
-const videoController = require('./controllers/videoController');
+const videoController = require('./src/controllers/videoController');
 // const productRoutes = require('./src/routes/productRoutes');
 // const commentRoutes = require('./src/routes/commentRoutes');
 
@@ -21,7 +21,7 @@ const app = express();
 // // Connect to the database
 connectDB();
 
-router.get('/videos', videoController.getVideos);
+app.get('/videos', videoController.getVideos);
 
 // // Routes
 // app.use('/api/video', videoRoutes);
@@ -37,7 +37,7 @@ router.get('/videos', videoController.getVideos);
 // app.listen(process.env.PORT || 3000)
 
 
-const express = require('express')
+// const express = require('express')
 // const app = express()
 app.all('/', (req, res) => {
     console.log("Just got a request!")
