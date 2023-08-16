@@ -2,7 +2,7 @@
 // const express = require('express');
 // const cors = require('cors');
 // const bodyParser = require('body-parser');
-// const connectDB = require('./src/utils/db');
+const connectDB = require('./src/utils/db');
 // const authRoutes = require('./src/routes/authRoutes');
 // const videoRoutes = require('./src/routes/videoRoutes');
 // const productRoutes = require('./src/routes/productRoutes');
@@ -18,7 +18,7 @@
 // app.use(bodyParser.json());
 
 // // Connect to the database
-// connectDB();
+connectDB();
 
 // // Routes
 // app.use('/api/auth', authRoutes);
