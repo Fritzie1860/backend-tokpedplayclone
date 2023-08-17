@@ -1,6 +1,6 @@
 // // index.js
 const express = require('express');
-// const cors = require('cors');
+const cors = require('cors');
 // const bodyParser = require('body-parser');
 const connectDB = require('./src/utils/db');
 // const authRoutes = require('./src/routes/authRoutes');
@@ -18,7 +18,7 @@ const app = express();
 
 // // Middleware
 // // Allow cross-origin requests from any origin
-// app.use(cors());
+app.use(cors());
 // app.use(bodyParser.json());
 
 // // Connect to the database
