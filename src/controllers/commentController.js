@@ -24,7 +24,8 @@ const submitComment = async (req, res) => {
     }];
     // const newComment = new Comment({ username, comment, video_id });
     // await newComment.save();
-    await Comment.insertMany(videosData);
+    // await Comment.insertMany(videosData);
+    await comment.create(videosData);
     res.json({ success: true, message: 'Comment submitted successfully.' , data: videosData });
   } catch (err) {
     res.status(500).json({ error: 'Unable to submit comment.' , data: err});
