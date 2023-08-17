@@ -19,7 +19,9 @@ const app = express();
 // // Middleware
 // // Allow cross-origin requests from any origin
 app.use(cors({
-    origin: 'https://tokpedplay-fritzie.000webhostapp.com'
+    origin: 'https://tokpedplay-fritzie.000webhostapp.com', // Ganti dengan domain yang sesuai
+    methods: ['GET', 'POST'], // Metode HTTP yang diizinkan
+    allowedHeaders: ['Content-Type', 'Authorization'] // Header yang diizinkan
   }));
 // app.use((req, res, next) => {
 //     res.header('Access-Control-Allow-Origin', 'https://tokpedplay-fritzie.000webhostapp.com'); // Tambahkan domain ini
