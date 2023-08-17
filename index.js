@@ -6,6 +6,9 @@ const connectDB = require('./src/utils/db');
 // const authRoutes = require('./src/routes/authRoutes');
 // const videoRoutes = require('./src/routes/videoRoutes');
 const videoController = require('./src/controllers/videoController');
+const productController = require('./src/controllers/productController');
+const commentController = require('./src/controllers/commentController');
+
 // const productRoutes = require('./src/routes/productRoutes');
 // const commentRoutes = require('./src/routes/commentRoutes');
 
@@ -22,6 +25,9 @@ const app = express();
 connectDB();
 
 app.get('/videos', videoController.getVideos);
+app.get('/products/:video_id', productController.getProductsByVideo);
+app.get('/comments/:video_id', commentController.getCommentsByVideo);
+app.post('/comments', commentController.submitComment);
 
 // // Routes
 // app.use('/api/video', videoRoutes);
