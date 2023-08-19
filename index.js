@@ -16,10 +16,12 @@ const app = express();
 
 const corsOptions = {
   origin: "https://tokpedplay-fritzie.000webhostapp.com", // Replace with your allowed origin(s)
+  methods: ['GET', 'POST'],
   optionsSuccessStatus: 200,
   allowedHeaders: "*",
 };
-
+  
+app.use(cors(corsOptions));
 app.use((req, res, next) => {
   res.setHeader(
     "Permissions-Policy",
