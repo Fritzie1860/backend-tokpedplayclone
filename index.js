@@ -29,6 +29,7 @@ app.use(bodyParser.json());
 connectDB();
 
 app.get("/videos", videoController.getVideos);
+app.get("/videos/:video_id", videoController.getVideoById);
 app.get("/products/:video_id", productController.getProductsByVideo);
 app.get("/comments/:video_id", commentController.getCommentsByVideo);
 app.post("/comments", commentController.submitComment);

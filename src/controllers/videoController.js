@@ -1,7 +1,23 @@
 // src/controllers/videoController.js
 const Video = require('../models/Video');
 
-// Get a list of videos with thumbnails from YouTube
+const getVideoById = async (req, res) => {
+  try {
+    const _id = req.params.video_id;
+    // console.log(JSON.stringify(req.params));
+    console.log(_id);
+    const datas = await Video.find(
+      {_id},
+    )
+      .sort({ timestamp: -1 })
+      .exec();
+    console.log("datas: "+ datas);
+    res.json(datas);
+  } catch (err) {
+    res.status(500).json({ message: "Unable to fetch datas.", error: err });
+  }
+};
+
 const getVideos = async (req, res) => {
   try {
     const videos = await Video.find();
@@ -13,4 +29,5 @@ const getVideos = async (req, res) => {
 
 module.exports = {
   getVideos,
+  getVideoById
 };
