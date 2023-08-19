@@ -133,4 +133,4 @@ If you're running the backend separately, start the server using either of the f
    ```
    node index.js
    ```
-If you're also running the frontend locally, please note that due to the absence of environment variables, you'll need to manually replace all API URLs with http://localhost:3000 or http://localhost:3001 in your frontend code. To run the frontend and backend together, you may need to see this [repository] (https://github.com/Fritzie1860/FinalProject-TokpedPlayClone).
+If you're also running the frontend locally, please note that due to the absence of environment variables, you'll need to manually replace all API URLs with http://localhost:3000 or http://localhost:3001 in your frontend code. To run the frontend and backend together, you may need to see this [repository](https://github.com/Fritzie1860/FinalProject-TokpedPlayClone).
