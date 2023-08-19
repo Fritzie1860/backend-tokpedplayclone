@@ -33,6 +33,7 @@ app.use(function (req, res, next) {
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
   );
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
   if ("OPTIONS" == req.method) {
     res.sendStatus(200);
   } else {
