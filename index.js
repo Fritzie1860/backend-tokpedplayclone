@@ -45,7 +45,7 @@ app.post('/comments', commentController.submitComment);
 // })
 
 // // Start the server
-// app.listen(process.env.PORT || 3000)
+// app.listen(process.env.PORT || 3001)
 
 
 // const express = require('express')
