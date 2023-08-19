@@ -7,21 +7,39 @@ const comment = require("./Comment");
 
 const videosData = [
   {
-    link_thumbnail: "dummy.png",
-    link_video: "https://www.youtube.com/watch?v=yoBibrIPWJQ",
-    title: "MURAH BGT",
+    link_thumbnail: "Gambar1.jpeg",
+    link_video: "yoBibrIPWJQ",
+    title: "Tato Temporary kack!",
     upload_date: "2022-07-28",
   },
   {
-    link_thumbnail: "dummy.png",
-    link_video: "https://www.youtube.com/watch?v=yoBibrIPWJQ",
-    title: "MURAH BGT",
+    link_thumbnail: "Gambar2.jpeg",
+    link_video: "sP2ZwmET0CI",
+    title: "Diskon 60% + POUCH",
     upload_date: "2022-07-28",
   },
   {
-    link_thumbnail: "dummy.png",
-    link_video: "https://www.youtube.com/watch?v=yoBibrIPWJQ",
-    title: "MURAH BGT",
+    link_thumbnail: "Gambar3.jpeg",
+    link_video: "yewZ45-DdLw",
+    title: "Wangi betul, Murah betul!",
+    upload_date: "2022-07-28",
+  },
+  {
+    link_thumbnail: "Gambar4.jpeg",
+    link_video: "yoBibrIPWJQ",
+    title: "Tissue NICE ada give away",
+    upload_date: "2022-07-28",
+  },
+  {
+    link_thumbnail: "Gambar5.jpeg",
+    link_video: "sP2ZwmET0CI",
+    title: "WEEKEND MERDEKA SALE cuma sejam",
+    upload_date: "2022-07-28",
+  },
+  {
+    link_thumbnail: "Gambar6.jpeg",
+    link_video: "yewZ45-DdLw",
+    title: "BEAUTY TOOLS",
     upload_date: "2022-07-28",
   },
 ];
@@ -93,8 +111,8 @@ async function insertComment() {
   for (const Video of videos) {
     await comment.create({
       video_id: Video._id,
-      username: "Maleo",
-      comment: "ggwp",
+      username: "Zie",
+      comment: "minat kak",
       timestamp: Date.now(),
     });
   }
