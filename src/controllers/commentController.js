@@ -93,7 +93,7 @@ const submitComment = async (req, res) => {
     });
   } catch (err) {
     console.error("Error submitting comment:", err);
-    res.status(500).json({ error: "Unable to submit comment.", data: err });
+    res.status(500).json({ error: "Unable to submit comment.", data: err, isi: req.body});
   }
 };
 
