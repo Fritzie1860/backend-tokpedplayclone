@@ -19,7 +19,7 @@ const app = express();
 // // Middleware
 // // Allow cross-origin requests from any origin
 const corsOptions = {
-  origin: "https://try.com", // Replace with your allowed origin(s)
+  origin: "https://tokpedplay-fritzie.000webhostapp.com", // Replace with your allowed origin(s)
   optionsSuccessStatus: 200,
   allowedHeaders: "*",
 };
