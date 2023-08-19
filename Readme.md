@@ -111,7 +111,7 @@ git clone https://github.com/Fritzie1860/backend-tokpedplayclone.git
 
 Open the [/db.js](https://github.com/Fritzie1860/backend-tokpedplayclone/blob/main/src/utils/db.js) file and ensure that your MongoDB connection URL is properly configured. If necessary, update it with your MongoDB Atlas connection details.
 
-5. Populate DB: 
+5. Populate DB (if needed): 
 
 ```
    cd src
