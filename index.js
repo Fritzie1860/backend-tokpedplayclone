@@ -7,14 +7,20 @@ const commentController = require("./src/controllers/commentController");
 
 const app = express();
 
+const allowedOrigins = ['https://tokpedplay-fritzie.000webhostapp.com', 'https://tiny-red-dog-coat.cyclic.cloud'];
+
 const corsOptions = {
-  origin: "https://tokpedplay-fritzie.000webhostapp.com",
+  origin: function (origin, callback) {
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST'],
-  optionsSuccessStatus: 200,
-  allowedHeaders: "*",
+  optionsSuccessStatus: 200
 };
 
-// Use the cors middleware with the specified options
 app.use(cors(corsOptions));
 
 // Add Permissions-Policy header
