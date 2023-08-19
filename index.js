@@ -1,42 +1,61 @@
-const express = require("express");
-const cors = require("cors");
-const connectDB = require("./src/utils/db");
-const videoController = require("./src/controllers/videoController");
-const productController = require("./src/controllers/productController");
-const commentController = require("./src/controllers/commentController");
+// // index.js
+const express = require('express');
+const cors = require('cors');
+// const bodyParser = require('body-parser');
+const connectDB = require('./src/utils/db');
+// const authRoutes = require('./src/routes/authRoutes');
+// const videoRoutes = require('./src/routes/videoRoutes');
+const videoController = require('./src/controllers/videoController');
+const productController = require('./src/controllers/productController');
+const commentController = require('./src/controllers/commentController');
+
+// const productRoutes = require('./src/routes/productRoutes');
+// const commentRoutes = require('./src/routes/commentRoutes');
 
 const app = express();
 
-const allowedOrigins = ['https://tokpedplay-fritzie.000webhostapp.com', 'https://tiny-red-dog-coat.cyclic.cloud'];
+// require('dotenv').config();
 
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  methods: ['GET', 'POST'],
-  optionsSuccessStatus: 200
-};
+// // Middleware
+// // Allow cross-origin requests from any origin
+app.use(cors({
+    origin: 'https://tokpedplay-fritzie.000webhostapp.com',
+    methods: ['GET', 'POST'],
+    allowedHeaders: '*'
+  }));
+// app.use((req, res, next) => {
+//     res.header('Access-Control-Allow-Origin', 'https://tokpedplay-fritzie.000webhostapp.com'); // Tambahkan domain ini
+//     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+//     next();
+// });
+// app.use(bodyParser.json());
 
-app.use(cors(corsOptions));
-
-// Connect to the database
+// // Connect to the database
 connectDB();
 
-app.get("/videos", videoController.getVideos);
-app.get("/products/:video_id", productController.getProductsByVideo);
-app.get("/comments/:video_id", commentController.getCommentsByVideo);
-app.post("/comments", commentController.submitComment);
+app.get('/videos', videoController.getVideos);
+app.get('/products/:video_id', productController.getProductsByVideo);
+app.get('/comments/:video_id', commentController.getCommentsByVideo);
+app.post('/comments', commentController.submitComment);
 
-// app.all("/", (req, res) => {
-//   console.log("Just got a request!");
-//   res.send("Yo!");
-// });
+// // Routes
+// app.use('/api/video', videoRoutes);
+// app.use('/api/product', productRoutes);
+// app.use('/api/comment', commentRoutes);
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// app.all('/', (req, res) => {
+//   console.log("Just got a request!")
+//   res.send('Yo!')
+// })
+
+// // Start the server
+// app.listen(process.env.PORT || 3000)
+
+
+// const express = require('express')
+// const app = express()
+app.all('/', (req, res) => {
+    console.log("Just got a request!")
+    res.send('Yo!')
+})
+app.listen(process.env.PORT || 3000)
